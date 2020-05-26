@@ -382,6 +382,7 @@ section#about section#containerAboutInfo {
     opacity: 0;
     transition: 0.5s;
     position: absolute;
+    overflow: scroll;
     z-index: 0;
 }
 
@@ -396,6 +397,7 @@ section#about section#containerAboutInfo {
     color: white;
     font-size: 8em;
     font-family: BitCell;
+    text-align: center;
 }
 
 #aboutGame p {
@@ -412,12 +414,13 @@ section#about div#aboutInstructions {
     float: left;
     display: flex;
     flex-flow: column;
+    justify-content: bottom;
     align-items: center;
-    justify-content: center;
     opacity: 0;
     transition: 0.5s;
     position: absolute;
     z-index: 0;
+    overflow: scroll;
 }
 
 section#about div#aboutInstructions.show {
@@ -433,12 +436,17 @@ section#about div#aboutInstructions.show {
     font-family: BitCell;
 }
 
-#aboutInstructions p {
-    color: white;
-    font-size: 2em;
-    text-align: justify;
-    padding: 0px 30px;
-    font-family: BitCell;
+#aboutInstructions img#teclasMov {
+    width: 80%;
+}
+
+#aboutInstructions img#teclaPausa {
+    width: 30%;
+    margin: 30px 0px 30px
+}
+
+#aboutInstructions img#poderes {
+    width: 100%;
 }
 
 section#about div#aboutDevelopers {
