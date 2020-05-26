@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+}
+
+section#start {
+    width: 100%;
+    height: 100vh;
+    font-family: BitCell;
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: 1s;
+}
+
+section#start.startVisible {
+    opacity: 1;
+    z-index: 2;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#start div#titleSelection {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titleSelection h1 {
+    color: white;
+    font-size: 6em;
+    animation: animateTitle 3s infinite alternate;
+    z-index: 100;
+    position: absolute;
+    top: 0%;
+}
+
+#start section#characterSelection {
+    width: 100%;
+    height: 60%;
+}
+
+#characterSelection div#character {
+    width: 40%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-flow: column;
+    position: relative;
+}
+
+#character a#pacman {
+    color: white;
+    width: 65%;
+    height: 50%;
+    font-size: 3em;
+    z-index: 100;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: left;
+    transition: 0.5s, border 0s;
+}
+
+#character a#missPacman {
+    color: white;
+    width: 65%;
+    height: 50%;
+    font-size: 3em;
+    z-index: 100;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: left;
+    transition: 0.5s, border 0s;
+}
+
+#character a#uniPacman {
+    color: white;
+    width: 65%;
+    height: 50%;
+    font-size: 3em;
+    z-index: 100;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: left;
+    transition: 0.5s, border 0s;
+}
+
+#character a.active {
+    transform: scale(1.1);
+    border: 5px dotted white;
+}
+
+#character a.selected {
+    transform: scale(1.1);
+    border: 5px dotted white;
+    animation: animateBorder 0.1s infinite alternate;
+}
+
+@keyframes animateBorder {
+    0% {border: 5px dotted white;}
+    100% {border: 5px dotted black;}
+}
+
+#character a img {
+    height: 80%;
+    margin: 0px 10px 0px 0px;
+}
+
+#characterSelection div#characterMap {
+    width: 60%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#characterMap img {
+    position: absolute;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#characterMap img.show {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#start div#botonesJugar {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#botonesJugar a {
+    margin: 0px 50px;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    width: 30vh;
+    text-align: center;
+    font-size: 3em;
+    transition: 0.1s linear;
+    z-index: 100;
+}
+
+#botonesJugar a.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: 0.1s linear;
+    transform: scale(1.2);
+}

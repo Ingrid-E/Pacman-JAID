@@ -1,0 +1,133 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="Style/style.css">
+	<link rel="stylesheet" type="text/css" href="Style/stylePlay.css">
+	<link rel="stylesheet" type="text/css" href="Style/styleGame.css">
+	<title>Pac-man</title>
+</head>
+
+<body>
+	<section id="Home">
+		<section id="animateBackground">
+			<img id="fantasmaAzul" src="Media/FantasmaAzul.png">
+            <img id="fantasmaNaranja" src="Media/FantasmaNaranja.png">
+            <img id="fantasmaRosado" src="Media/FantasmaRosado.png">
+            <img id="fantasmaRojo" src="Media/FantasmaRojo.png">
+            
+            <img id="frutaFresa" src="Media/Fresa.png">
+            <img id="frutaCereza" src="Media/Cereza.png">
+            <img id="frutaUvas" src="Media/Uvas.png">
+            <img id="frutaManzana" src="Media/Manzana.png">
+        </section>
+
+        <section id="Principal">
+            <h1 id="TitleHome">PACMAN</h1>
+            <a id="ButtonStart">JUGAR</a>
+            <a id="ButtonScore">PUNTUACIONES</a>
+            <a id="ButtonAbout">ACERCA DE</a>
+
+            <script type="text/javascript" src="Js/CambioVentana.js"></script>
+        </section>
+
+        <section id="start">
+            <div id="titleSelection">
+                <h1>Seleccione su personaje</h1>
+            </div>
+            <section id="characterSelection">
+                <div id="character">
+                    <a id="pacman"><img src="Media/pacman.png">Pac-Man</a>
+                    <a id="missPacman"><img src="Media/misspacman.png">Miss Pac-Man</a>
+                    <a id="uniPacman"><img src="Media/pacUnivalle.png">Uni Pac-Man</a>
+                </div>
+                <div id="characterMap">
+                    <img id="mapPacman" src="Media/mapPacman.png">
+                    <img id="mapMissPacman" src="Media/mapMissPacman.png">
+                    <img id="mapUniPacman" src="Media/mapUniPacman.png">
+                </div>
+            </section>
+            <div id="mapCharacter">
+    
+            </div>
+            <div id="botonesJugar">
+                <a id="buttonRegresarPlay">REGRESAR</a>
+                <a id="buttonPlay">JUGAR</a>
+            </div>
+        </section>
+    
+        
+
+        <section id="score">
+            <h1 class="titleScore">Top 5</h1>
+            <div id="mejores">
+                <a><img src="Media/pacwoman.gif"><h1>1. Ingrid</h1><p>Puntuacion: 3000</p></a>
+                <a><img src="Media/pacman.gif"><h1>2. Danny</h1><p>Puntuacion: 3000</p></a>
+                <a><img src="Media/pacUnivalle.gif"><h1>3. Andres</h1><p>Puntuacion: 3000</p></a>
+                <a><img src="Media/pacUnivalle.gif"><h1>4. Dante</h1><p>Puntuacion: 3000</p></a>
+                <a><img src="Media/pacman.gif"><h1>5. Jean</h1><p>Puntuacion: 3000</p></a>
+            </div>
+            <a id="buttonRegresarScore">REGRESAR</a>
+
+            <script type="text/javascript" src="Js/menuScore.js"></script>
+        </section>
+
+        <section id="about">
+            <div id="aboutOptions">
+                <h1>ACERCA DE</h1>
+                <a id="buttonAboutGame">Juego</a>
+                <a id="buttonAboutInstructions">Instrucciones</a>
+                <a id="buttonAboutDevelopers">Desarrolladores</a>
+                <a id="buttonRegresarAbout">REGRESAR</a>
+            </div>
+    
+            <section id="containerAboutInfo">
+                <div id="aboutGame">
+                    <h1>Pacman</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam harum quidem quo et sequi quae quas. 
+                        Excepturi minima maiores officia vel expedita, minus mollitia magni nisi consequatur facere reprehenderit ratione. 
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, ipsum animi sit doloremque porro eum rem 
+                        nam magni quaerat obcaecati fugiat ipsa numquam ducimus molestiae. Pariatur corrupti vero quo quis.
+                    </p>
+                </div>
+    
+                <div id="aboutInstructions">
+                    <h1>¿Como Jugar?</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam harum quidem quo et sequi quae quas. 
+                        Excepturi minima maiores officia vel expedita, minus mollitia magni nisi consequatur facere reprehenderit ratione. 
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, ipsum animi sit doloremque porro eum rem 
+                        nam magni quaerat obcaecati fugiat ipsa numquam ducimus molestiae. Pariatur corrupti vero quo quis. 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ad tempore earum commodi saepe culpa deserunt impedit, 
+                        vitae modi mollitia dolor neque fugiat illo autem aut facilis eligendi odio eius?
+                    </p>
+                </div>
+    
+                <div id="aboutDevelopers">
+                    <h1>Desarroladores</h1>
+                    <a id="Andres"><img src="Media/Andres.png">Andres David Camargo</a>
+                    <a id="Danny"><img src="Media/Danny.png">Danny Lopez Cardenas</a>
+                    <a id="Dante"><img src="Media/Dante.png">Andres Felipe Quesada</a>
+                    <a id="Ingrid"><img src="Media/Ingrid.png">Ingrid Echeverri Montoya</a>
+                    <a id="Jean"><img src="Media/Jean.png">Jean Pierre Cardenas</a>
+                </div>
+            </section>
+
+            <script type="text/javascript" src="Js/menuAbout.js"></script>
+        </section>
+
+        <section id="game">
+            <section id="juego">
+                <canvas id="canvas" width="300" height="300"></canvas>
+                <h1 id="pauseTitle">Pausado</h1>
+            </section>
+        </section>
+    </section>
+    <script type="text/javascript" src="web-lib/processing.js"></script>;
+    <script type="text/javascript" src="web-lib/functional-light.js"></script>;
+    <script type="text/javascript" src="Js/map.js"></script>;
+    <script type="text/javascript" src="Js/menuPlay.js"></script> 
+</body>
+</html>

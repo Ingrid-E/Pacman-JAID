@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+}
+
+section#game {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    opacity: 0;
+    transition: 1s;
+}
+
+section#game.gameVisible {
+    opacity: 1;
+    z-index: 2;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+section#juego {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+canvas#canvas {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+}
+
+#juego h1#pauseTitle {
+    position: absolute;
+    color: white;
+    font-size: 10em;
+    font-family: BitCell;
+    z-index: 20;
+    opacity: 0;
+    transform: translate(-80px);
+}
+
+#juego h1#pauseTitle.show {
+    opacity: 1;
+    animation: animatePauseTitle 0.2s infinite alternate;
+}
+
+@keyframes animatePauseTitle {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

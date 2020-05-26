@@ -1,0 +1,555 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    background: black;
+}
+
+@font-face {
+    font-family: BitCell;
+    src: url("Fonts/bitcell.ttf");
+}
+
+@font-face {
+    font-family: PacFont;
+    src: url("Fonts/pac-man.ttf");
+}
+
+section#Home {
+    width: 100%;
+    height: 100vh;
+}
+
+section#animateBackground {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -10;
+}
+
+#Home h1#TitleHome {
+    margin: 0px 0px 20px 0px;
+    font-family: PacFont;
+    color: white;
+    font-size: 8em;
+    animation: animateTitle 3s infinite alternate;
+    z-index: 100;
+}
+
+@keyframes animateTitle {
+    0% {color: aquamarine;}
+    35% {color: red;}
+    70% {color: orange;}
+    100% {color: pink;}
+}
+
+#Home #Principal {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#Home #Principal.PrincipalInvisible {
+    opacity: 0;
+    transition: 1s;
+}
+
+#Home #Principal a {
+    margin: 10px;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    width: 40vh;
+    text-align: center;
+    font-size: 3em;
+    font-family: BitCell;
+    transition: 0.1s linear;
+    z-index: 100;
+}
+
+#Home #Principal a.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: 0.1s linear;
+    transform: scale(1.2);
+}
+
+#animateBackground img {
+    position: absolute;
+    width: 8%;
+}
+
+#animateBackground img#fantasmaAzul {
+    bottom: 4%;
+    right: 10%;
+    transform: rotate(25deg);
+    opacity: 0;
+    animation: animateBackgroundItems 2s linear 0.3s infinite;
+}
+
+#animateBackground img#fantasmaNaranja {
+    top: 5%;
+    right: 35%;
+    transform: rotate(-25deg);
+    opacity: 0;
+    animation: animateBackgroundItems 2.5s linear 0.6s infinite;
+}
+
+#animateBackground img#fantasmaRosado {
+    top: 4%;
+    left: 5%;
+    transform: rotate(25deg);
+    opacity: 0;
+    animation: animateBackgroundItems 2s linear 0.75s infinite;
+}
+
+#animateBackground img#fantasmaRojo {
+    bottom: 10%;
+    left: 25%;
+    transform: rotate(-25deg);
+    opacity: 0;
+    animation: animateBackgroundItems 2.5s linear 1.2s infinite;
+}
+
+#animateBackground img#frutaManzana {
+    top: 25%;
+    right: 5%;
+    transform: rotate(-25deg);
+    opacity: 0;
+    animation: animateBackgroundItems 2s linear infinite;
+}
+
+#animateBackground img#frutafresa {
+    top: 50%;
+    right: 25%;
+    transform: rotate(25deg);
+    opacity: 0;
+    animation: animateBackgroundItems 2.5s linear 1.5s infinite;
+}
+
+#animateBackground img#frutaUvas {
+    top: 20%;
+    left: 30%;
+    transform: rotate(-25deg);
+    opacity: 0;
+    animation: animateBackgroundItems 2s linear 2.5s infinite;
+}
+
+#animateBackground img#frutaCereza {
+    bottom: 30%;
+    left: 7%;
+    transform: rotate(25deg);
+    opacity: 0;
+    animation: animateBackgroundItems 2.5s linear 1.8s infinite;
+}
+
+@keyframes animateBackgroundItems {
+    0% {opacity: 0;}
+    50% {opacity: 1; scale: 1.1;}
+    100% {opacity: 0;}
+}
+
+
+
+
+section#score {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: 1s;
+}
+
+section#score.scoreVisible {
+    opacity: 1;
+    z-index: 2;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#score h1.titleScore {
+    font-family: BitCell;
+    color: white;
+    font-size: 10em;
+    animation: animateTitle 3s infinite alternate;
+    z-index: 100;
+}
+
+#score div#mejores {
+    width: 90%;
+    height: 50%;
+    display: inline-block;
+    border: 5px dashed white;
+    overflow: hidden;
+    min-width: 530px;
+    margin: 30px 0px 20px;
+    animation: animateBorder 3s infinite alternate;
+}
+
+@keyframes animateBorder {
+    0% {border: 5px dashed pink;}
+    35% {border: 5px dashed orange;}
+    70% {border: 5px dashed red;}
+    100% {border: 5px dashed aquamarine;}
+}
+
+#mejores a {
+    font-family: BitCell;
+    color: white;
+    font-size: 3em;
+    border: 4px solid white;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 47%;
+    height: 25%;
+    float: left;
+    margin: 10px;
+    min-width: 500px; 
+}
+
+#mejores a h1 {
+    margin: 0px 20px 0px;
+}
+
+#mejores a p {
+    float: right;
+}
+
+@media screen and (max-width: 1280px) {
+    #mejores a h1 {
+        font-size: 1em;
+    }
+
+    #mejores a {
+        width: 96%;
+    }
+}
+
+#score a#buttonRegresarScore {
+    margin: 10px 0px;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    width: 30vh;
+    text-align: center;
+    font-size: 3em;
+    font-family: BitCell;
+    transition: 0.1s linear;
+    z-index: 100;
+}
+
+#score a#buttonRegresarScore.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: 0.1s linear;
+    transform: scale(1.2);
+}
+
+
+
+section#about {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 0;
+    transition: 1s;
+}
+
+section#about.aboutVisible {
+    opacity: 1;
+    z-index: 2;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+section#about div#aboutOptions {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    transition: 0.8s;
+    transition-delay: 0.5s;
+}
+
+section#about div#aboutOptions.small {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    transition: 0.8s;
+}
+
+#aboutOptions h1 {
+    margin: 0px 0px 10px 0px;
+    font-family: BitCell;
+    color: white;
+    font-size: 10em;
+    animation: animateTitle 3s infinite alternate;
+    z-index: 100;
+}
+
+#aboutOptions a {
+    margin: 10px 0px;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    width: 35vh;
+    text-align: center;
+    font-size: 3em;
+    font-family: BitCell;
+    transition: 0.1s linear;
+    z-index: 100;
+}
+
+#aboutOptions a.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: 0.1s linear;
+    transform: scale(1.2);
+}
+
+#aboutOptions a#buttonAboutGame.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: 0.1s linear;
+    transform: scale(1.2);
+}
+
+#aboutOptions a#buttonAboutInstructions.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: 0.1s linear;
+    transform: scale(1.2);
+}
+
+#aboutOptions a#buttonAboutDevelopers.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: 0.1s linear;
+    transform: scale(1.2);
+}
+
+#aboutOptions a#buttonRegresarAbout.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: 0.1s linear;
+    transform: scale(1.2);
+}
+
+
+
+section#about section#containerAboutInfo {
+    width: 50%;
+    height: 100vh;
+    float: left;
+    position: relative;
+}
+
+#containerAboutInfo div#aboutGame {
+    width: 100%;
+    height: 100vh;
+    float: left;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    z-index: 0;
+}
+
+#containerAboutInfo div#aboutGame.show {
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 0.7s;
+    z-index: 1;
+}
+
+#aboutGame h1 {
+    color: white;
+    font-size: 8em;
+    font-family: BitCell;
+}
+
+#aboutGame p {
+    color: white;
+    font-size: 2em;
+    text-align: justify;
+    padding: 0px 30px;
+    font-family: BitCell;
+}
+
+section#about div#aboutInstructions {
+    width: 100%;
+    height: 100vh;
+    float: left;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    z-index: 0;
+}
+
+section#about div#aboutInstructions.show {
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 0.7s;
+    z-index: 1;
+}
+
+#aboutInstructions h1 {
+    color: white;
+    font-size: 8em;
+    font-family: BitCell;
+}
+
+#aboutInstructions p {
+    color: white;
+    font-size: 2em;
+    text-align: justify;
+    padding: 0px 30px;
+    font-family: BitCell;
+}
+
+section#about div#aboutDevelopers {
+    width: 100%;
+    height: 100vh;
+    font-family: BitCell;
+    float: left;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    z-index: 0;
+}
+
+section#about div#aboutDevelopers.show {
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 0.7s;
+    z-index: 1;
+}
+
+#aboutDevelopers h1 {
+    color: white;
+    font-size: 8em;
+    position: absolute;
+    top: 0%;
+}
+
+#aboutDevelopers a {
+    color: white;
+    width: 30vh;
+    text-align: center;
+    font-size: 3em;
+    z-index: 100;
+    float: left;
+    position: absolute;
+}
+
+#aboutDevelopers a#Andres {
+    color: white;
+    width: 25vh;
+    font-size: 2em;
+    z-index: 100;
+    float: left;
+    position: absolute;
+    top: 25%;
+    left: 0%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutDevelopers a#Danny {
+    color: white;
+    width: 25vh;
+    font-size: 2em;
+    z-index: 100;
+    float: left;
+    position: absolute;
+    top: 25%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutDevelopers a#Dante {
+    color: white;
+    width: 25vh;
+    font-size: 2em;
+    z-index: 100;
+    float: left;
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutDevelopers a#Ingrid {
+    color: white;
+    width: 25vh;
+    font-size: 2em;
+    z-index: 100;
+    float: left;
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutDevelopers a#Jean {
+    color: white;
+    width: 25vh;
+    font-size: 2em;
+    z-index: 100;
+    float: left;
+    position: absolute;
+    top: 60%;
+    right: 15%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
